@@ -18,6 +18,7 @@
 ### 2.3. Training Process
 - [x] Multi-Person Detector
 - [X] Binary Image Classifier 
+- [x] Fisheye augmentation (novel)
 ### 2.4. Inference and Evaluation
 - [X] Multi-Person Detector  
 - [X] Binary Image Classifier 
@@ -34,6 +35,7 @@ project
 |   |   ├── rotation_aware_loss.py: Total loss of our detector for detecting bounding boxes' center, size and angle of rotation
 |   ├── datasets
 |   |   ├── custom.py: Customized dataset reader used to pass dataset into training process of the detector 
+|   |   ├── fisheye_effect.py: Apply fisheye distortion to images crawled from Internet which may have dissimilar features comparing to fisheye images
 |   ├── logging
 |   |   ├── logger.py: Logger used to display training progress
 |   |   ├── training_monitor.py: Drawing and saving loss during training process
