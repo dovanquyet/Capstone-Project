@@ -1,0 +1,39 @@
+# Configuration file: Comment/Uncomment one of the first two blocks to enable training process of corresponding component
+# Note: - Only uncomment one of the two   
+#       - The 3rd block is for setting training parameters
+#       - The final block is for setting inference pipeline
+
+###################################################
+# Multi-Person Detector
+###################################################
+#dataset:
+#  reader: custom
+#  train_path: ./worker_dataset/annotations.json
+
+#model:
+#  type: detection
+#  name: rapid
+#  criterion: rotation_aware_loss
+###################################################
+# Binary Image Classifier
+###################################################
+dataset:
+  reader: image_folder
+  train_path: ./safety_jacket_dataset
+
+model:
+  type: classification
+  name: efficientnetv2s
+  criterion: cross_entropy
+###################################################
+# Training Parameters
+###################################################
+epochs: 500
+batch_size: 32
+lr: 1.e-3
+momentum: 0.9
+weight_decay: 5.e-4
+###################################################
+# Inference Configuration
+###################################################
+video_encoder: avc1
